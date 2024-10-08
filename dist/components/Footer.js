@@ -106,11 +106,7 @@ var SiteFooter = /*#__PURE__*/function (_React$Component) {
         xs: 12,
         md: 4,
         className: "mb-4 mb-md-0"
-      }, /*#__PURE__*/React.createElement("img", {
-        className: "h-10 mb-3",
-        src: logo || config.LOGO_TRADEMARK_URL,
-        alt: intl.formatMessage(messages['footer.logo.altText'])
-      }), /*#__PURE__*/React.createElement("div", {
+      }, /*#__PURE__*/React.createElement("div", {
         className: "d-flex"
       }, socialLinks.map(function (socialLink) {
         return /*#__PURE__*/React.createElement("a", {
