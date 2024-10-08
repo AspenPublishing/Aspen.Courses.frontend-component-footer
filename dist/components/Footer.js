@@ -91,29 +91,26 @@ var SiteFooter = /*#__PURE__*/function (_React$Component) {
         icon: "M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
       }];
       return /*#__PURE__*/React.createElement("footer", {
-        className: "bg-indigoDark",
-        "aria-labelledby": "footer-heading",
-        style: {
-          backgroundColor: 'rgb(17 9 6)'
-        }
+        className: "bg-indigoDark footer-custom",
+        "aria-labelledby": "footer-heading"
       }, /*#__PURE__*/React.createElement("h2", {
         id: "footer-heading",
         className: "sr-only"
       }, "Footer"), /*#__PURE__*/React.createElement(Container, {
         size: "lg",
-        className: "px-4 pb-8 pt-16 sm:pt-24 lg:pt-32"
+        className: "footer-container"
       }, /*#__PURE__*/React.createElement(Row, {
-        className: "xl:grid xl:grid-cols-4 xl:gap-8"
+        className: "footer-content"
       }, /*#__PURE__*/React.createElement(Col, {
-        className: "space-y-8"
+        xs: 12,
+        md: 4,
+        className: "footer-logo-social"
       }, /*#__PURE__*/React.createElement("img", {
-        className: "h-11",
+        className: "footer-logo",
         src: "".concat(getConfig().LMS_BASE_URL, "/static/indigo/images/logo.svg"),
         alt: "Aspen Publishing"
       }), /*#__PURE__*/React.createElement("div", {
-        className: "flex space-x-6"
-      }, /*#__PURE__*/React.createElement("div", {
-        className: "flex justify-center space-x-10"
+        className: "footer-social-links"
       }, socialLinks.map(function (socialLink) {
         return /*#__PURE__*/React.createElement("a", {
           key: socialLink.title,
@@ -121,39 +118,37 @@ var SiteFooter = /*#__PURE__*/function (_React$Component) {
           target: "_blank",
           rel: "noopener noreferrer",
           "aria-label": socialLink.title,
-          className: "text-gray-400 hover:text-indigoSecondary",
+          className: "footer-social-link",
           onClick: _this2.externalLinkClickHandler
         }, /*#__PURE__*/React.createElement("span", {
           className: "sr-only"
         }, socialLink.title), /*#__PURE__*/React.createElement("svg", {
-          className: "h-6 w-6 transition-transform duration-300 ease-in-out hover:scale-125",
-          fill: "#d6ae75",
+          className: "footer-social-icon",
           viewBox: "0 0 24 24",
           "aria-hidden": "true"
         }, /*#__PURE__*/React.createElement("path", {
           d: socialLink.icon
         })));
-      })))), /*#__PURE__*/React.createElement(Col, {
-        className: "mt-16 grid grid-cols-3 xl:col-span-2 xl:mt-0"
+      }))), /*#__PURE__*/React.createElement(Col, {
+        xs: 12,
+        md: 8,
+        className: "footer-nav-links"
       }, navLinks.map(function (link) {
         return /*#__PURE__*/React.createElement("div", {
           key: link.title,
-          className: "md:grid md:grid-cols-1 md:gap-8"
-        }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("ul", {
-          role: "list",
-          className: "mt-6 space-y-4"
-        }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+          className: "footer-nav-item"
+        }, /*#__PURE__*/React.createElement("a", {
           href: link.url,
           target: "_blank",
           rel: "noopener noreferrer",
           "aria-label": link.title,
-          className: "text-sm leading-6 text-gray-100 hover:text-gray-300",
+          className: "footer-nav-link",
           onClick: _this2.externalLinkClickHandler
-        }, link.title)))));
+        }, link.title));
       }))), /*#__PURE__*/React.createElement("div", {
-        className: "mt-16 border-t border-gray-400/10 pt-8 sm:mt-20 lg:mt-16"
+        className: "footer-bottom"
       }, /*#__PURE__*/React.createElement("p", {
-        className: "text-xs leading-5 text-gray-500"
+        className: "footer-copyright"
       }, "\xA9 ", new Date().getFullYear(), " All rights reserved. Aspen Publishing"))), showLanguageSelector && /*#__PURE__*/React.createElement(LanguageSelector, {
         options: supportedLanguages,
         onSubmit: onLanguageSelected

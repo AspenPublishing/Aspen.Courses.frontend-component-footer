@@ -60,62 +60,54 @@ class SiteFooter extends React.Component {
     ];
 
     return (
-      <footer className="bg-indigoDark" aria-labelledby="footer-heading" style={{ backgroundColor: 'rgb(17 9 6)' }}>
+      <footer className="bg-indigoDark footer-custom" aria-labelledby="footer-heading">
         <h2 id="footer-heading" className="sr-only">Footer</h2>
-        <Container size="lg" className="px-4 pb-8 pt-16 sm:pt-24 lg:pt-32">
-          <Row className="xl:grid xl:grid-cols-4 xl:gap-8">
-            <Col className="space-y-8">
+        <Container size="lg" className="footer-container">
+          <Row className="footer-content">
+            <Col xs={12} md={4} className="footer-logo-social">
               <img 
-                className="h-11" 
+                className="footer-logo" 
                 src={`${getConfig().LMS_BASE_URL}/static/indigo/images/logo.svg`}
                 alt="Aspen Publishing" 
               />
-              <div className="flex space-x-6">
-                <div className="flex justify-center space-x-10">
-                  {socialLinks.map((socialLink) => (
-                    <a
-                      key={socialLink.title}
-                      href={socialLink.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={socialLink.title}
-                      className="text-gray-400 hover:text-indigoSecondary"
-                      onClick={this.externalLinkClickHandler}
-                    >
-                      <span className="sr-only">{socialLink.title}</span>
-                      <svg className="h-6 w-6 transition-transform duration-300 ease-in-out hover:scale-125" fill="#d6ae75" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d={socialLink.icon} />
-                      </svg>
-                    </a>
-                  ))}
-                </div>
+              <div className="footer-social-links">
+                {socialLinks.map((socialLink) => (
+                  <a
+                    key={socialLink.title}
+                    href={socialLink.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={socialLink.title}
+                    className="footer-social-link"
+                    onClick={this.externalLinkClickHandler}
+                  >
+                    <span className="sr-only">{socialLink.title}</span>
+                    <svg className="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d={socialLink.icon} />
+                    </svg>
+                  </a>
+                ))}
               </div>
             </Col>
-            <Col className="mt-16 grid grid-cols-3 xl:col-span-2 xl:mt-0">
+            <Col xs={12} md={8} className="footer-nav-links">
               {navLinks.map((link) => (
-                <div key={link.title} className="md:grid md:grid-cols-1 md:gap-8">
-                  <div>
-                    <ul role="list" className="mt-6 space-y-4">
-                      <li>
-                        <a
-                          href={link.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={link.title}
-                          className="text-sm leading-6 text-gray-100 hover:text-gray-300"
-                          onClick={this.externalLinkClickHandler}
-                        >
-                          {link.title}
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
+                <div key={link.title} className="footer-nav-item">
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={link.title}
+                    className="footer-nav-link"
+                    onClick={this.externalLinkClickHandler}
+                  >
+                    {link.title}
+                  </a>
                 </div>
               ))}
             </Col>
           </Row>
-          <div className="mt-16 border-t border-gray-400/10 pt-8 sm:mt-20 lg:mt-16">
-            <p className="text-xs leading-5 text-gray-500">&copy; {new Date().getFullYear()} All rights reserved. Aspen Publishing</p>
+          <div className="footer-bottom">
+            <p className="footer-copyright">&copy; {new Date().getFullYear()} All rights reserved. Aspen Publishing</p>
           </div>
         </Container>
         {showLanguageSelector && (
