@@ -46,6 +46,7 @@ var SiteFooter = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
       var _this$props = this.props,
         supportedLanguages = _this$props.supportedLanguages,
         onLanguageSelected = _this$props.onLanguageSelected,
@@ -53,27 +54,95 @@ var SiteFooter = /*#__PURE__*/function (_React$Component) {
         intl = _this$props.intl;
       var showLanguageSelector = supportedLanguages.length > 0 && onLanguageSelected;
       var config = this.context.config;
+      var navLinks = [{
+        title: "About Us",
+        url: "https://aspenpublishing.com/pages/discover-jd-next-program"
+      }, {
+        title: "Support",
+        url: "https://support.aspenpublishing.com/hc/en-us/categories/19204583377428-JD-Next"
+      }, {
+        title: "End User License Agreement",
+        url: "/agreement"
+      }, {
+        title: "Terms Of Use",
+        url: "/tos"
+      }, {
+        title: "Privacy Statement",
+        url: "/privacy"
+      }, {
+        title: "California Disclosure",
+        url: "/disclosure"
+      }];
+      var socialLinks = [{
+        title: "x",
+        url: "https://twitter.com/AspenPublishing"
+      }, {
+        title: "linkedin",
+        url: "https://www.linkedin.com/company/aspenpublishing/"
+      }, {
+        title: "youtube",
+        url: "https://www.youtube.com/@aspenpublishing6830"
+      }, {
+        title: "facebook",
+        url: "https://www.facebook.com/profile.php?id=61555997104704"
+      }];
       return /*#__PURE__*/React.createElement("footer", {
-        role: "contentinfo",
-        className: "footer d-flex border-top py-3 px-4"
+        className: "bg-indigoDark",
+        "aria-labelledby": "footer-heading"
+      }, /*#__PURE__*/React.createElement("h2", {
+        id: "footer-heading",
+        className: "sr-only"
+      }, "Footer"), /*#__PURE__*/React.createElement("div", {
+        className: "mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32"
       }, /*#__PURE__*/React.createElement("div", {
-        className: "container-fluid d-flex"
-      }, /*#__PURE__*/React.createElement("a", {
-        className: "d-block",
-        href: config.LMS_BASE_URL,
-        "aria-label": intl.formatMessage(messages['footer.logo.ariaLabel'])
+        className: "xl:grid xl:grid-cols-4 xl:gap-8"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "space-y-8"
       }, /*#__PURE__*/React.createElement("img", {
-        style: {
-          maxHeight: 45
-        },
+        className: "h-11",
         src: logo || config.LOGO_TRADEMARK_URL,
         alt: intl.formatMessage(messages['footer.logo.altText'])
-      })), /*#__PURE__*/React.createElement("div", {
-        className: "flex-grow-1"
-      }), showLanguageSelector && /*#__PURE__*/React.createElement(LanguageSelector, {
+      }), /*#__PURE__*/React.createElement("div", {
+        className: "flex space-x-6"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "flex justify-center space-x-10"
+      }, socialLinks.map(function (socialLink) {
+        return /*#__PURE__*/React.createElement("a", {
+          key: socialLink.title,
+          href: socialLink.url,
+          target: "_blank",
+          rel: "noopener noreferrer",
+          "aria-label": socialLink.title,
+          className: "text-gray-400 hover:text-indigoSecondary",
+          onClick: _this2.externalLinkClickHandler
+        }, /*#__PURE__*/React.createElement("span", {
+          className: "sr-only"
+        }, socialLink.title));
+      })))), /*#__PURE__*/React.createElement("div", {
+        className: "mt-16 grid grid-cols-3 xl:col-span-2 xl:mt-0"
+      }, navLinks.map(function (link) {
+        return /*#__PURE__*/React.createElement("div", {
+          key: link.title,
+          className: "md:grid md:grid-cols-1 md:gap-8"
+        }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("ul", {
+          role: "list",
+          className: "mt-6 space-y-4"
+        }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+          href: link.url,
+          target: "_blank",
+          rel: "noopener noreferrer",
+          "aria-label": link.title,
+          className: "text-sm leading-6 text-gray-100 hover:text-gray-300",
+          onClick: _this2.externalLinkClickHandler
+        }, link.title)))));
+      }))), /*#__PURE__*/React.createElement("div", {
+        className: "mt-16 border-t border-gray-400/10 pt-8 sm:mt-20 lg:mt-16"
+      }, /*#__PURE__*/React.createElement("p", {
+        className: "text-xs leading-5 text-gray-500"
+      }, "\xA9 ", new Date().getFullYear(), " All rights reserved. Aspen Publishing"))), showLanguageSelector && /*#__PURE__*/React.createElement(LanguageSelector, {
         options: supportedLanguages,
         onSubmit: onLanguageSelected
-      })));
+      }));
     }
   }]);
 }(React.Component);

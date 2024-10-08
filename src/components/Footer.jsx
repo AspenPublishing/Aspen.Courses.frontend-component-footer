@@ -43,31 +43,81 @@ class SiteFooter extends React.Component {
     const showLanguageSelector = supportedLanguages.length > 0 && onLanguageSelected;
     const { config } = this.context;
 
+    const navLinks = [
+      { title: "About Us", url: "https://aspenpublishing.com/pages/discover-jd-next-program" },
+      { title: "Support", url: "https://support.aspenpublishing.com/hc/en-us/categories/19204583377428-JD-Next" },
+      { title: "End User License Agreement", url: "/agreement" },
+      { title: "Terms Of Use", url: "/tos" },
+      { title: "Privacy Statement", url: "/privacy" },
+      { title: "California Disclosure", url: "/disclosure" },
+    ];
+
+    const socialLinks = [
+      { title: "x", url: "https://twitter.com/AspenPublishing" },
+      { title: "linkedin", url: "https://www.linkedin.com/company/aspenpublishing/" },
+      { title: "youtube", url: "https://www.youtube.com/@aspenpublishing6830" },
+      { title: "facebook", url: "https://www.facebook.com/profile.php?id=61555997104704" },
+    ];
+
     return (
-      <footer
-        role="contentinfo"
-        className="footer d-flex border-top py-3 px-4"
-      >
-        <div className="container-fluid d-flex">
-          <a
-            className="d-block"
-            href={config.LMS_BASE_URL}
-            aria-label={intl.formatMessage(messages['footer.logo.ariaLabel'])}
-          >
-            <img
-              style={{ maxHeight: 45 }}
-              src={logo || config.LOGO_TRADEMARK_URL}
-              alt={intl.formatMessage(messages['footer.logo.altText'])}
-            />
-          </a>
-          <div className="flex-grow-1" />
-          {showLanguageSelector && (
-            <LanguageSelector
-              options={supportedLanguages}
-              onSubmit={onLanguageSelected}
-            />
-          )}
+      <footer className="bg-indigoDark" aria-labelledby="footer-heading">
+        <h2 id="footer-heading" className="sr-only">Footer</h2>
+        <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+          <div className="xl:grid xl:grid-cols-4 xl:gap-8">
+            <div className="space-y-8">
+              <img className="h-11" src={logo || config.LOGO_TRADEMARK_URL} alt={intl.formatMessage(messages['footer.logo.altText'])} />
+              <div className="flex space-x-6">
+                <div className="flex justify-center space-x-10">
+                  {socialLinks.map((socialLink) => (
+                    <a
+                      key={socialLink.title}
+                      href={socialLink.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={socialLink.title}
+                      className="text-gray-400 hover:text-indigoSecondary"
+                      onClick={this.externalLinkClickHandler}
+                    >
+                      <span className="sr-only">{socialLink.title}</span>
+                      {/* Add appropriate SVG icon based on socialLink.title */}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="mt-16 grid grid-cols-3 xl:col-span-2 xl:mt-0">
+              {navLinks.map((link) => (
+                <div key={link.title} className="md:grid md:grid-cols-1 md:gap-8">
+                  <div>
+                    <ul role="list" className="mt-6 space-y-4">
+                      <li>
+                        <a
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={link.title}
+                          className="text-sm leading-6 text-gray-100 hover:text-gray-300"
+                          onClick={this.externalLinkClickHandler}
+                        >
+                          {link.title}
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="mt-16 border-t border-gray-400/10 pt-8 sm:mt-20 lg:mt-16">
+            <p className="text-xs leading-5 text-gray-500">&copy; {new Date().getFullYear()} All rights reserved. Aspen Publishing</p>
+          </div>
         </div>
+        {showLanguageSelector && (
+          <LanguageSelector
+            options={supportedLanguages}
+            onSubmit={onLanguageSelected}
+          />
+        )}
       </footer>
     );
   }
