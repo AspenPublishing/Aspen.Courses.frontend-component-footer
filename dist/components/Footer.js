@@ -107,7 +107,7 @@ var SiteFooter = /*#__PURE__*/function (_React$Component) {
         className: "footer-logo-social"
       }, /*#__PURE__*/React.createElement("img", {
         className: "footer-logo",
-        src: "".concat(getConfig().LMS_BASE_URL, "/static/indigo/images/logo.svg"),
+        src: "".concat(getConfig().LMS_BASE_URL, "/static/indigo/images/logo-white.svg"),
         alt: "Aspen Publishing"
       }), /*#__PURE__*/React.createElement("div", {
         className: "footer-social-links"

@@ -67,7 +67,7 @@ class SiteFooter extends React.Component {
             <Col xs={12} md={4} className="footer-logo-social">
               <img 
                 className="footer-logo" 
-                src={`${getConfig().LMS_BASE_URL}/static/indigo/images/logo.svg`}
+                src={`${getConfig().LMS_BASE_URL}/static/indigo/images/logo-white.svg`}
                 alt="Aspen Publishing" 
               />
               <div className="footer-social-links">
