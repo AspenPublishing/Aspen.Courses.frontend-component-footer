@@ -17,6 +17,8 @@ import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
 import { sendTrackEvent } from '@edx/frontend-platform/analytics';
 import { ensureConfig } from '@edx/frontend-platform';
 import { AppContext } from '@edx/frontend-platform/react';
+import { Container, Row, Col, Icon } from '@openedx/paragon';
+import { Facebook, LinkedIn, Twitter, YouTube } from '@openedx/paragon/icons';
 import messages from './Footer.messages';
 import LanguageSelector from './LanguageSelector';
 ensureConfig(['LMS_BASE_URL', 'LOGO_TRADEMARK_URL'], 'Footer component');
@@ -74,38 +76,42 @@ var SiteFooter = /*#__PURE__*/function (_React$Component) {
         url: "/disclosure"
       }];
       var socialLinks = [{
-        title: "x",
-        url: "https://twitter.com/AspenPublishing"
+        title: "Twitter",
+        url: "https://twitter.com/AspenPublishing",
+        icon: Twitter
       }, {
-        title: "linkedin",
-        url: "https://www.linkedin.com/company/aspenpublishing/"
+        title: "LinkedIn",
+        url: "https://www.linkedin.com/company/aspenpublishing/",
+        icon: LinkedIn
       }, {
-        title: "youtube",
-        url: "https://www.youtube.com/@aspenpublishing6830"
+        title: "YouTube",
+        url: "https://www.youtube.com/@aspenpublishing6830",
+        icon: YouTube
       }, {
-        title: "facebook",
-        url: "https://www.facebook.com/profile.php?id=61555997104704"
+        title: "Facebook",
+        url: "https://www.facebook.com/profile.php?id=61555997104704",
+        icon: Facebook
       }];
       return /*#__PURE__*/React.createElement("footer", {
-        className: "bg-indigoDark",
+        className: "bg-dark text-white py-4",
         "aria-labelledby": "footer-heading"
       }, /*#__PURE__*/React.createElement("h2", {
         id: "footer-heading",
         className: "sr-only"
-      }, "Footer"), /*#__PURE__*/React.createElement("div", {
-        className: "mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32"
-      }, /*#__PURE__*/React.createElement("div", {
-        className: "xl:grid xl:grid-cols-4 xl:gap-8"
-      }, /*#__PURE__*/React.createElement("div", {
-        className: "space-y-8"
+      }, "Footer"), /*#__PURE__*/React.createElement(Container, {
+        size: "lg"
+      }, /*#__PURE__*/React.createElement(Row, {
+        className: "mb-4"
+      }, /*#__PURE__*/React.createElement(Col, {
+        xs: 12,
+        md: 4,
+        className: "mb-4 mb-md-0"
       }, /*#__PURE__*/React.createElement("img", {
-        className: "h-11",
+        className: "h-10 mb-3",
         src: logo || config.LOGO_TRADEMARK_URL,
         alt: intl.formatMessage(messages['footer.logo.altText'])
       }), /*#__PURE__*/React.createElement("div", {
-        className: "flex space-x-6"
-      }, /*#__PURE__*/React.createElement("div", {
-        className: "flex justify-center space-x-10"
+        className: "d-flex"
       }, socialLinks.map(function (socialLink) {
         return /*#__PURE__*/React.createElement("a", {
           key: socialLink.title,
@@ -113,36 +119,41 @@ var SiteFooter = /*#__PURE__*/function (_React$Component) {
           target: "_blank",
           rel: "noopener noreferrer",
           "aria-label": socialLink.title,
-          className: "text-gray-400 hover:text-indigoSecondary",
+          className: "text-white mr-3",
           onClick: _this2.externalLinkClickHandler
-        }, /*#__PURE__*/React.createElement("span", {
-          className: "sr-only"
-        }, socialLink.title));
-      })))), /*#__PURE__*/React.createElement("div", {
-        className: "mt-16 grid grid-cols-3 xl:col-span-2 xl:mt-0"
-      }, navLinks.map(function (link) {
-        return /*#__PURE__*/React.createElement("div", {
+        }, /*#__PURE__*/React.createElement(Icon, {
+          src: socialLink.icon,
+          size: "sm"
+        }));
+      }))), /*#__PURE__*/React.createElement(Col, {
+        xs: 12,
+        md: 8
+      }, /*#__PURE__*/React.createElement(Row, null, navLinks.map(function (link) {
+        return /*#__PURE__*/React.createElement(Col, {
           key: link.title,
-          className: "md:grid md:grid-cols-1 md:gap-8"
-        }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("ul", {
-          role: "list",
-          className: "mt-6 space-y-4"
-        }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+          xs: 6,
+          sm: 4,
+          className: "mb-3"
+        }, /*#__PURE__*/React.createElement("a", {
           href: link.url,
           target: "_blank",
           rel: "noopener noreferrer",
           "aria-label": link.title,
-          className: "text-sm leading-6 text-gray-100 hover:text-gray-300",
+          className: "text-white small",
           onClick: _this2.externalLinkClickHandler
-        }, link.title)))));
-      }))), /*#__PURE__*/React.createElement("div", {
-        className: "mt-16 border-t border-gray-400/10 pt-8 sm:mt-20 lg:mt-16"
-      }, /*#__PURE__*/React.createElement("p", {
-        className: "text-xs leading-5 text-gray-500"
-      }, "\xA9 ", new Date().getFullYear(), " All rights reserved. Aspen Publishing"))), showLanguageSelector && /*#__PURE__*/React.createElement(LanguageSelector, {
+        }, link.title));
+      })))), /*#__PURE__*/React.createElement("hr", {
+        className: "border-light"
+      }), /*#__PURE__*/React.createElement(Row, {
+        className: "mt-3"
+      }, /*#__PURE__*/React.createElement(Col, null, /*#__PURE__*/React.createElement("p", {
+        className: "text-muted small"
+      }, "\xA9 ", new Date().getFullYear(), " All rights reserved. Aspen Publishing"))), showLanguageSelector && /*#__PURE__*/React.createElement(Row, {
+        className: "mt-3"
+      }, /*#__PURE__*/React.createElement(Col, null, /*#__PURE__*/React.createElement(LanguageSelector, {
         options: supportedLanguages,
         onSubmit: onLanguageSelected
-      }));
+      })))));
     }
   }]);
 }(React.Component);
