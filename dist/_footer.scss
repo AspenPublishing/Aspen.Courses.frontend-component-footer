@@ -7,7 +7,21 @@ $gray-footer: #fcfcfc !default;
 .footer-custom {
   background-color: rgb(17 9 6);
   color: #fff;
-  padding: 2rem 0;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 2rem;
+  padding-top: 4rem;
+  max-width: 80rem;
+
+  @media (min-width: 640px) {
+    padding-top: 6rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 8rem;
+  }
 }
 
 .footer-container {
