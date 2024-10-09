@@ -62,7 +62,7 @@ class SiteFooter extends React.Component {
     return (
       <footer className="bg-indigoDark footer-custom" aria-labelledby="footer-heading">
         <h2 id="footer-heading" className="sr-only">Footer</h2>
-        <Container size="lg" className="footer-container">
+        <Container size="lg" className="footer-container container-mw-xl container-fluid">
           <Row className="footer-content">
             <Col xs={12} md={4} className="footer-logo-social">
               <img 
