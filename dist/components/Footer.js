@@ -98,7 +98,7 @@ var SiteFooter = /*#__PURE__*/function (_React$Component) {
         className: "sr-only"
       }, "Footer"), /*#__PURE__*/React.createElement(Container, {
         size: "lg",
-        className: "footer-container"
+        className: "footer-container container-mw-xl container-fluid"
       }, /*#__PURE__*/React.createElement(Row, {
         className: "footer-content"
       }, /*#__PURE__*/React.createElement(Col, {
