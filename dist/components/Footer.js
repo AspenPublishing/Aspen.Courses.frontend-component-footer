@@ -47,13 +47,13 @@ var SiteFooter = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
       var _this$props = this.props,
         supportedLanguages = _this$props.supportedLanguages,
         onLanguageSelected = _this$props.onLanguageSelected,
         intl = _this$props.intl;
       var showLanguageSelector = supportedLanguages.length > 0 && onLanguageSelected;
       var config = this.context.config;
+      var currentYear = new Date().getFullYear();
       var navLinks = [{
         title: "About Us",
         url: "https://aspenpublishing.com/pages/discover-jd-next-program"
@@ -91,68 +91,81 @@ var SiteFooter = /*#__PURE__*/function (_React$Component) {
         icon: "M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
       }];
       return /*#__PURE__*/React.createElement("footer", {
-        className: "bg-indigoDark footer-custom",
+        className: "footer",
         "aria-labelledby": "footer-heading"
       }, /*#__PURE__*/React.createElement("h2", {
         id: "footer-heading",
         className: "sr-only"
-      }, "Footer"), /*#__PURE__*/React.createElement(Container, {
-        size: "lg",
-        className: "footer-container container-mw-xl container-fluid"
-      }, /*#__PURE__*/React.createElement(Row, {
-        className: "footer-content"
-      }, /*#__PURE__*/React.createElement(Col, {
-        xs: 12,
-        md: 4,
-        className: "footer-logo-social"
+      }, "Footer"), /*#__PURE__*/React.createElement("div", {
+        className: "footer-container"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "footer-logo"
       }, /*#__PURE__*/React.createElement("img", {
-        className: "footer-logo",
         src: "".concat(getConfig().LMS_BASE_URL, "/static/indigo/images/logo-white.svg"),
-        alt: "Aspen Publishing"
+        alt: "Aspen Publishing Logo",
+        className: "footer-logo-img"
+      })), /*#__PURE__*/React.createElement("div", {
+        className: "footer-links"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "footer-links-group"
+      }, /*#__PURE__*/React.createElement("h3", {
+        className: "footer-link-title"
+      }, /*#__PURE__*/React.createElement("a", {
+        href: "https://aspenpublishing.com/pages/discover-jd-next-program",
+        target: "_blank",
+        rel: "noopener",
+        "aria-label": "About Us"
+      }, "About Us")), /*#__PURE__*/React.createElement("h3", {
+        className: "footer-link-title"
+      }, /*#__PURE__*/React.createElement("a", {
+        href: "https://support.aspenpublishing.com/hc/en-us/categories/19204583377428-JD-Next",
+        target: "_blank",
+        rel: "noopener",
+        "aria-label": "Support"
+      }, "Support"))), /*#__PURE__*/React.createElement("div", {
+        className: "footer-links-list"
+      }, /*#__PURE__*/React.createElement("a", {
+        href: "/tos",
+        className: "footer-link",
+        "aria-label": "Terms of Service"
+      }, "Terms of Service"), /*#__PURE__*/React.createElement("a", {
+        href: "/privacy",
+        className: "footer-link",
+        "aria-label": "Privacy Policy"
+      }, "Privacy Policy"), /*#__PURE__*/React.createElement("a", {
+        href: "/disclosure",
+        className: "footer-link",
+        "aria-label": "California Consumer Act Policy"
+      }, "California Consumer Act Policy"), /*#__PURE__*/React.createElement("a", {
+        href: "/agreement",
+        className: "footer-link",
+        "aria-label": "End User License Agreement"
+      }, "End User License Agreement")))), /*#__PURE__*/React.createElement("hr", {
+        className: "footer-divider",
+        "aria-hidden": "true"
       }), /*#__PURE__*/React.createElement("div", {
-        className: "footer-social-links"
-      }, socialLinks.map(function (socialLink) {
-        return /*#__PURE__*/React.createElement("a", {
-          key: socialLink.title,
-          href: socialLink.url,
-          target: "_blank",
-          rel: "noopener noreferrer",
-          "aria-label": socialLink.title,
-          className: "footer-social-link",
-          onClick: _this2.externalLinkClickHandler
-        }, /*#__PURE__*/React.createElement("span", {
-          className: "sr-only"
-        }, socialLink.title), /*#__PURE__*/React.createElement("svg", {
-          className: "footer-social-icon",
-          viewBox: "0 0 24 24",
-          "aria-hidden": "true"
-        }, /*#__PURE__*/React.createElement("path", {
-          d: socialLink.icon
-        })));
-      }))), /*#__PURE__*/React.createElement(Col, {
-        xs: 12,
-        md: 8,
-        className: "footer-nav-links"
-      }, navLinks.map(function (link) {
-        return /*#__PURE__*/React.createElement("div", {
-          key: link.title,
-          className: "footer-nav-item"
-        }, /*#__PURE__*/React.createElement("a", {
-          href: link.url,
-          target: "_blank",
-          rel: "noopener noreferrer",
-          "aria-label": link.title,
-          className: "footer-nav-link",
-          onClick: _this2.externalLinkClickHandler
-        }, link.title));
-      }))), /*#__PURE__*/React.createElement("div", {
         className: "footer-bottom"
-      }, /*#__PURE__*/React.createElement("p", {
+      }, /*#__PURE__*/React.createElement("span", {
         className: "footer-copyright"
-      }, "\xA9 ", new Date().getFullYear(), " All rights reserved. Aspen Publishing"))), showLanguageSelector && /*#__PURE__*/React.createElement(LanguageSelector, {
-        options: supportedLanguages,
-        onSubmit: onLanguageSelected
-      }));
+      }, "\xA9 ", currentYear, " ASPEN PUBLISHING"), /*#__PURE__*/React.createElement("div", {
+        className: "footer-social-links"
+      }, /*#__PURE__*/React.createElement("a", {
+        href: "https://www.facebook.com/profile.php?id=61555997104704",
+        className: "footer-social-link",
+        "aria-label": "Aspen Publishing on Facebook"
+      }, "Facebook"), /*#__PURE__*/React.createElement("a", {
+        href: "https://www.linkedin.com/company/aspenpublishing/",
+        className: "footer-social-link",
+        "aria-label": "Aspen Publishing on LinkedIn"
+      }, "LinkedIn"), /*#__PURE__*/React.createElement("a", {
+        href: "https://twitter.com/AspenPublishing",
+        className: "footer-social-link",
+        "aria-label": "Aspen Publishing on Twitter"
+      }, "Twitter"), /*#__PURE__*/React.createElement("a", {
+        href: "https://www.youtube.com/@aspenpublishing6830",
+        className: "footer-social-link",
+        "aria-label": "Aspen Publishing on YouTube"
+      }, "YouTube"))));
     }
   }]);
 }(React.Component);
