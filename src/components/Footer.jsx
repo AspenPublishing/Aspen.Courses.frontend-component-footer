@@ -33,7 +33,7 @@ class SiteFooter extends React.Component {
     };
     sendTrackEvent(eventName, properties);
   }
-
+  
   render() {
     const {
       supportedLanguages,
@@ -42,6 +42,7 @@ class SiteFooter extends React.Component {
     } = this.props;
     const showLanguageSelector = supportedLanguages.length > 0 && onLanguageSelected;
     const { config } = this.context;
+    const currentYear = new Date().getFullYear();
 
     const navLinks = [
       { title: "About Us", url: "https://aspenpublishing.com/pages/discover-jd-next-program" },
@@ -60,62 +61,44 @@ class SiteFooter extends React.Component {
     ];
 
     return (
-      <footer className="bg-indigoDark footer-custom" aria-labelledby="footer-heading">
+      <footer className="footer" aria-labelledby="footer-heading">
         <h2 id="footer-heading" className="sr-only">Footer</h2>
-        <Container size="lg" className="footer-container container-mw-xl container-fluid">
-          <Row className="footer-content">
-            <Col xs={12} md={4} className="footer-logo-social">
-              <img 
-                className="footer-logo" 
-                src={`${getConfig().LMS_BASE_URL}/static/indigo/images/logo-white.svg`}
-                alt="Aspen Publishing" 
-              />
-              <div className="footer-social-links">
-                {socialLinks.map((socialLink) => (
-                  <a
-                    key={socialLink.title}
-                    href={socialLink.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={socialLink.title}
-                    className="footer-social-link"
-                    onClick={this.externalLinkClickHandler}
-                  >
-                    <span className="sr-only">{socialLink.title}</span>
-                    <svg className="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d={socialLink.icon} />
-                    </svg>
-                  </a>
-                ))}
-              </div>
-            </Col>
-            <Col xs={12} md={8} className="footer-nav-links">
-              {navLinks.map((link) => (
-                <div key={link.title} className="footer-nav-item">
-                  <a
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={link.title}
-                    className="footer-nav-link"
-                    onClick={this.externalLinkClickHandler}
-                  >
-                    {link.title}
-                  </a>
-                </div>
-              ))}
-            </Col>
-          </Row>
-          <div className="footer-bottom">
-            <p className="footer-copyright">&copy; {new Date().getFullYear()} All rights reserved. Aspen Publishing</p>
+        <div className="footer-container">
+          <div className="footer-logo">
+            <img src={`${getConfig().LMS_BASE_URL}/static/indigo/images/logo-white.svg`} alt="Aspen Publishing Logo" className="footer-logo-img" />
           </div>
-        </Container>
-        {showLanguageSelector && (
-          <LanguageSelector
-            options={supportedLanguages}
-            onSubmit={onLanguageSelected}
-          />
-        )}
+    
+          <div className="footer-links">
+            <div className="footer-links-group">
+              <h3 className="footer-link-title">
+                <a href="https://aspenpublishing.com/pages/discover-jd-next-program" target="_blank" rel="noopener" aria-label="About Us">
+                  About Us
+                </a>
+              </h3>
+              <h3 className="footer-link-title">
+                <a href="https://support.aspenpublishing.com/hc/en-us/categories/19204583377428-JD-Next" target="_blank" rel="noopener" aria-label="Support">
+                  Support
+                </a>
+              </h3>
+            </div>
+            <div className="footer-links-list">
+              <a href="/tos" className="footer-link" aria-label="Terms of Service">Terms of Service</a>
+              <a href="/privacy" className="footer-link" aria-label="Privacy Policy">Privacy Policy</a>
+              <a href="/disclosure" className="footer-link" aria-label="California Consumer Act Policy">California Consumer Act Policy</a>
+              <a href="/agreement" className="footer-link" aria-label="End User License Agreement">End User License Agreement</a>
+            </div>
+          </div>
+        </div>
+        <hr className="footer-divider" aria-hidden="true" />
+        <div className="footer-bottom">
+          <span className="footer-copyright">&copy; {currentYear} ASPEN PUBLISHING</span>
+          <div className="footer-social-links">
+            <a href="https://www.facebook.com/profile.php?id=61555997104704" className="footer-social-link" aria-label="Aspen Publishing on Facebook">Facebook</a>
+            <a href="https://www.linkedin.com/company/aspenpublishing/" className="footer-social-link" aria-label="Aspen Publishing on LinkedIn">LinkedIn</a>
+            <a href="https://twitter.com/AspenPublishing" className="footer-social-link" aria-label="Aspen Publishing on Twitter">Twitter</a>
+            <a href="https://www.youtube.com/@aspenpublishing6830" className="footer-social-link" aria-label="Aspen Publishing on YouTube">YouTube</a>
+          </div>
+        </div>
       </footer>
     );
   }
