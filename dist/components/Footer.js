@@ -62,7 +62,7 @@ var SiteFooter = /*#__PURE__*/function (_React$Component) {
         id: "footer-heading",
         className: "sr-only"
       }, "Footer"), /*#__PURE__*/React.createElement("div", {
-        className: "mx-auto flex flex-col lg:flex-row justify-between items-start py-8 px-6 lg:px-0"
+        className: "mx-auto flex flex-col lg:flex-row justify-between items-start py-8 px-6 lg:px-0 container-xl"
       }, /*#__PURE__*/React.createElement("div", {
         className: "flex flex-col mb-8 lg:mb-0"
       }, /*#__PURE__*/React.createElement("img", {
@@ -102,10 +102,10 @@ var SiteFooter = /*#__PURE__*/function (_React$Component) {
         href: "/agreement",
         className: "footer-link-extra"
       }, "End User License Agreement")))), /*#__PURE__*/React.createElement("hr", {
-        className: "my-8 border-t border-d6ae75 mx-6 lg:mx-24",
+        className: "my-8 border-t border-d6ae75 mx-6 lg:mx-24 container-xl mx-auto",
         "aria-hidden": "true"
       }), /*#__PURE__*/React.createElement("div", {
-        className: "mx-auto flex flex-col lg:flex-row justify-between items-center px-6 lg:px-0 py-8"
+        className: "mx-auto flex flex-col lg:flex-row justify-between items-center px-6 lg:px-0 py-8 container-xl"
       }, /*#__PURE__*/React.createElement("span", {
         className: "text-gray-300 text-sm mb-4 lg:mb-0"
       }, "\xA9 ", currentYear, " ASPEN PUBLISHING"), /*#__PURE__*/React.createElement("div", {

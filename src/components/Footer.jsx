@@ -49,7 +49,7 @@ class SiteFooter extends React.Component {
     return (
       <footer className="relative w-full bg-181818 py-8" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">Footer</h2>
-      <div className="mx-auto flex flex-col lg:flex-row justify-between items-start py-8 px-6 lg:px-0">
+      <div className="mx-auto flex flex-col lg:flex-row justify-between items-start py-8 px-6 lg:px-0 container-xl">
         <div className="flex flex-col mb-8 lg:mb-0">
           <img src={getConfig().LOGO_URL} alt="Aspen Publishing Logo" className="w-40 h-auto mb-4" />
         </div>
@@ -71,8 +71,8 @@ class SiteFooter extends React.Component {
           </div>
         </div>
       </div>
-      <hr className="my-8 border-t border-d6ae75 mx-6 lg:mx-24" aria-hidden="true" />
-      <div className="mx-auto flex flex-col lg:flex-row justify-between items-center px-6 lg:px-0 py-8">
+      <hr className="my-8 border-t border-d6ae75 mx-6 lg:mx-24 container-xl mx-auto" aria-hidden="true" />
+      <div className="mx-auto flex flex-col lg:flex-row justify-between items-center px-6 lg:px-0 py-8 container-xl">
         <span className="text-gray-300 text-sm mb-4 lg:mb-0">&copy; {currentYear} ASPEN PUBLISHING</span>
         <div className="flex gap-4 lg:gap-8">
           <a href="https://www.facebook.com/profile.php?id=61555997104704" className="text-gray-300 text-sm">Facebook</a>
