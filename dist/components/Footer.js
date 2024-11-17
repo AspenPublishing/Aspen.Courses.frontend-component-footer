@@ -66,7 +66,7 @@ var SiteFooter = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/React.createElement("div", {
         className: "flex flex-col mb-8 lg:mb-0"
       }, /*#__PURE__*/React.createElement("img", {
-        src: getConfig().LOGO_URL,
+        src: getConfig().LOGO_WHITE_URL,
         alt: "Aspen Publishing Logo",
         className: "w-40 h-auto mb-4"
       })), /*#__PURE__*/React.createElement("div", {
@@ -90,16 +90,16 @@ var SiteFooter = /*#__PURE__*/function (_React$Component) {
       }, "Support"))), /*#__PURE__*/React.createElement("div", {
         className: "flex flex-col gap-4 text-gray-300"
       }, /*#__PURE__*/React.createElement("a", {
-        href: "/tos",
+        href: "".concat(getConfig().LMS_BASE_URL, "/tos"),
         className: "footer-link-extra"
       }, "Terms of Service"), /*#__PURE__*/React.createElement("a", {
-        href: "/privacy",
+        href: "".concat(getConfig().LMS_BASE_URL, "/privacy"),
         className: "footer-link-extra"
       }, "Privacy Policy"), /*#__PURE__*/React.createElement("a", {
-        href: "/disclosure",
+        href: "".concat(getConfig().LMS_BASE_URL, "/disclosure"),
         className: "footer-link-extra"
       }, "California Consumer Act Policy"), /*#__PURE__*/React.createElement("a", {
-        href: "/agreement",
+        href: "".concat(getConfig().LMS_BASE_URL, "/agreement"),
         className: "footer-link-extra"
       }, "End User License Agreement")))), /*#__PURE__*/React.createElement("hr", {
         className: "my-8 border-t border-d6ae75 mx-6 lg:mx-24 container-xl mx-auto",

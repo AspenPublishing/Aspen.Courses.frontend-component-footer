@@ -51,7 +51,7 @@ class SiteFooter extends React.Component {
       <h2 id="footer-heading" className="sr-only">Footer</h2>
       <div className="mx-auto flex flex-col lg:flex-row justify-between items-start py-8 px-6 lg:px-0 container-xl">
         <div className="flex flex-col mb-8 lg:mb-0">
-          <img src={getConfig().LOGO_URL} alt="Aspen Publishing Logo" className="w-40 h-auto mb-4" />
+          <img src={getConfig().LOGO_WHITE_URL} alt="Aspen Publishing Logo" className="w-40 h-auto mb-4" />
         </div>
 
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
@@ -64,10 +64,10 @@ class SiteFooter extends React.Component {
             </h3>
           </div>
           <div className="flex flex-col gap-4 text-gray-300">
-            <a href="/tos" className="footer-link-extra">Terms of Service</a>
-            <a href="/privacy" className="footer-link-extra">Privacy Policy</a>
-            <a href="/disclosure" className="footer-link-extra">California Consumer Act Policy</a>
-            <a href="/agreement" className="footer-link-extra">End User License Agreement</a>
+            <a href={`${getConfig().LMS_BASE_URL}/tos`} className="footer-link-extra">Terms of Service</a>
+            <a href={`${getConfig().LMS_BASE_URL}/privacy`} className="footer-link-extra">Privacy Policy</a>
+            <a href={`${getConfig().LMS_BASE_URL}/disclosure`} className="footer-link-extra">California Consumer Act Policy</a>
+            <a href={`${getConfig().LMS_BASE_URL}/agreement`} className="footer-link-extra">End User License Agreement</a>
           </div>
         </div>
       </div>
