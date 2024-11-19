@@ -73,7 +73,6 @@ a.text-gray-300 {
   color: #D1D5DB !important;
 }
 
-.text-white a,
-a.text-white {
+.footer-link a {
   color: #ffffff !important;
 }
