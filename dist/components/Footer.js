@@ -105,7 +105,7 @@ var SiteFooter = /*#__PURE__*/function (_React$Component) {
         className: "my-8 border-t border-d6ae75 mx-6 lg:mx-24 container-xl mx-auto",
         "aria-hidden": "true"
       }), /*#__PURE__*/React.createElement("div", {
-        className: "mx-auto flex flex-col lg:flex-row justify-between items-center px-6 lg:px-0 py-8 container-xl"
+        className: "mx-auto flex flex-col lg:flex-row justify-between lg:items-center px-6 lg:px-0 py-8 container-xl"
       }, /*#__PURE__*/React.createElement("span", {
         className: "text-gray-300 text-sm mb-4 lg:mb-0"
       }, "\xA9 ", currentYear, " ASPEN PUBLISHING"), /*#__PURE__*/React.createElement("div", {

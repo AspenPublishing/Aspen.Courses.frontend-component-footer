@@ -72,14 +72,14 @@ class SiteFooter extends React.Component {
         </div>
       </div>
       <hr className="my-8 border-t border-d6ae75 mx-6 lg:mx-24 container-xl mx-auto" aria-hidden="true" />
-      <div className="mx-auto flex flex-col lg:flex-row justify-between items-center px-6 lg:px-0 py-8 container-xl">
-        <span className="text-gray-300 text-sm mb-4 lg:mb-0">&copy; {currentYear} ASPEN PUBLISHING</span>
-        <div className="flex gap-4 lg:gap-8">
-          <a href="https://www.facebook.com/profile.php?id=61555997104704" className="text-gray-300 text-sm">Facebook</a>
-          <a href="https://www.linkedin.com/company/aspenpublishing/" className="text-gray-300 text-sm">LinkedIn</a>
-          <a href="https://twitter.com/AspenPublishing" className="text-gray-300 text-sm">Twitter</a>
-          <a href="https://www.youtube.com/@aspenpublishing6830" className="text-gray-300 text-sm">YouTube</a>
-        </div>
+        <div className="mx-auto flex flex-col lg:flex-row justify-between lg:items-center px-6 lg:px-0 py-8 container-xl">
+          <span className="text-gray-300 text-sm mb-4 lg:mb-0">&copy; {currentYear} ASPEN PUBLISHING</span>
+          <div className="flex gap-4 lg:gap-8">
+            <a href="https://www.facebook.com/profile.php?id=61555997104704" className="text-gray-300 text-sm">Facebook</a>
+            <a href="https://www.linkedin.com/company/aspenpublishing/" className="text-gray-300 text-sm">LinkedIn</a>
+            <a href="https://twitter.com/AspenPublishing" className="text-gray-300 text-sm">Twitter</a>
+            <a href="https://www.youtube.com/@aspenpublishing6830" className="text-gray-300 text-sm">YouTube</a>
+          </div>
         </div>
       </footer>
     );
